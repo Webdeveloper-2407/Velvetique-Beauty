@@ -1,0 +1,7 @@
+{
+  "name": "Velvetique Beauty",
+  "description": "Luxurious clean beauty and skincare e-commerce store with curated natural formulas, seamless shopping, reviews, and order tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
