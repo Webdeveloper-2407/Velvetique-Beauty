@@ -1,27 +1,58 @@
-export type ProductCategory = 'skincare' | 'makeup' | 'haircare' | 'bodycare' | 'suncare' | 'giftsets';
+export type ProductCategory =
+  | 'skincare'
+  | 'makeup'
+  | 'haircare'
+  | 'bodycare'
+  | 'suncare'
+  | 'tools'
+  | 'giftsets'
+  | 'mens'
+  | 'fragrance';
+
+export interface ProductVariant {
+  id: string;
+  name: string;
+  sku: string;
+  price: number;
+  originalPrice?: number;
+  stock: number;
+  image?: string;
+}
 
 export interface Product {
   id: string;
+  slug: string;
+  sku: string;
   name: string;
   subtitle: string;
+  brand: string;
   category: ProductCategory;
+  subcategory: string;
   price: number;
   originalPrice?: number;
+  currency: string;
   rating: number;
   reviewCount: number;
   image: string;
   additionalImages?: string[];
+  imageAlt?: string;
   description: string;
+  shortDescription?: string;
   ingredients: string[];
   howToUse: string;
   benefits: string[];
   volume: string;
   isBestSeller?: boolean;
   isNew?: boolean;
+  isFeatured?: boolean;
   isLimitedOffer?: boolean;
   inStock: boolean;
   stock: number;
   skinType?: string;
+  hairType?: string;
+  tags?: string[];
+  collections?: string[];
+  variants?: ProductVariant[];
 }
 
 export interface Category {
@@ -31,6 +62,18 @@ export interface Category {
   description: string;
   image: string;
   itemCount: number;
+  subcategories?: string[];
+}
+
+export interface Collection {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
+  productCount: number;
+  filterTag?: string;
 }
 
 export interface CartItem {
